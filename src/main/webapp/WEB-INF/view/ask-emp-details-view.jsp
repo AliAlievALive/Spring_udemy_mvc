@@ -1,11 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 10.10.2021
-  Time: 18:21
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <body>
 
@@ -14,12 +9,17 @@
 <br>
 <br>
 
-<form action="showDetails" method="get">
-    <input type="text" name="employeeName"
-           placeholder="Write your name"/>
+<form:form action="showDetails" modelAttribute="employee">
 
-    <input type="submit">
-</form>
+    Name <form:input path="name"/>
+    <br><br>
+    Surname <form:input path="surname"/>
+    <br><br>
+    Salary <form:input path="salary"/>
+    <br><br>
+
+    <input type="submit" value="Ok">
+</form:form>
 
 </body>
 </html>
